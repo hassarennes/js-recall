@@ -32,9 +32,12 @@ var removeNullAndFalseElements = function(array) {
   }
   return array.filter(selectElements);
 }
-
+//La méthode reverse()transpose les éléments d'un tableau : le premier élément devient le dernier et le dernier devient le premier et ainsi de suite.
 var reverseWordsInArray = function(array) {
   function reverseWords(element) {
+   // La méthode split() permet de diviser une chaîne de caractères à partir d'un séparateur pour fournir un tableau de sous-chaînes.
+   // La méthode reverse()transpose les éléments d'un tableau : le premier élément devient le dernier et le dernier devient le premier et ainsi de suite.
+   //La méthode join() réunit tous les éléments d'un tableau dans une chaine de caractères.
       return element = element.split('').reverse().join('');
   }
   return array.map(reverseWords);
@@ -49,11 +52,15 @@ var everyPossiblePair = function(array) {
       res.push([student1, student2].sort()); //on ajoute le resultat dans le tableau res avec push
     }
   }
+  //La méthode sort() trie les éléments d'un tableau, dans ce même tableau, et renvoie le tableau. Le tri n'est pas forcément stable. Le tri s'effectue par défaut selon les points de code Unicode de la chaine de caractères.
   return res.sort();
 };
+
+//La méthode slice() renvoie un objet tableau, contenant une copie superficielle (shallow copy) d'une portion du tableau d'origine.//
 var allElementsExceptFirstThree = function(array) {
   return array.slice(3);
 }
+//La méthode unshift() ajoute un ou plusieurs éléments au début d'un tableau et renvoie la nouvelle longueur du tableau.
 var addElementToBeginning = function(array, element) {
   array.unshift(element);
   return array;
@@ -150,8 +157,22 @@ var stringToNumber = function(string) {
 }
 
 var calculateAverage = function(array) {
-    return 'Write your method here';
+   // La méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.
+  var total = array.reduce(function(a, b) {
+      return (a + b);
+    });
+return total/array.length;
 }
+//var calculateAverage = function(array) {
+  //var element = 0;
+    //for (var i = 0, c = array.length; i < c; i++) { // additionner chaque élément du tableau
+      //element += array[i];
+    //}
+  //return element/3; // diviser le total par 3
+//}
+
+
+
 
 var getElementsUntilGreaterThanFive = function(array) {
     return 'Write your method here';
