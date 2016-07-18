@@ -175,12 +175,21 @@ return total/array.length;
 
 
 var getElementsUntilGreaterThanFive = function(array) {
-    return 'Write your method here';
+  function test(a) {
+        return a > 5;
+    }
+    x = array.findIndex(test);
+    array.splice(x, array.length-x);
+    return array;
 }
 
 var convertArrayToObject = function(array) {
-    return 'Write your method here';
-}
+    var newObject = {};
+    for (i = 0; i < array.length; i += 2) {
+        newObject[array[i]] = array[i + 1];
+    }
+    return newObject;
+};
 
 var getAllLetters = function(array) {
     return 'Write your method here';
